@@ -22,6 +22,7 @@ refs.form.addEventListener('submit', async (ev) => {
     currentQuery = ev.target.elements['search'].value;
     refs.gallery.innerHTML = '';
     refs.loader.style.display = 'block';
+    refs.loadMoreBtn.style.display = 'none';
     currentPage = 1;
     if (currentQuery !== '') {
         try {
