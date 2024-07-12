@@ -43,7 +43,7 @@ function getLanguageCode() {
 }
   
 function loadTranslations(lang) {
-  return fetch(`languages/${lang}.json`)
+  return fetch(`goit-js-hw-12/languages/${lang}.json`)
     .then(response => response.json())
     .catch(error => console.error('Error loading translations:', error));
 }
