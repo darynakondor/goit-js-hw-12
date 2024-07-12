@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import glob from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
-
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 export default defineConfig(({ command }) => {
   return {
     define: {
@@ -11,7 +11,6 @@ export default defineConfig(({ command }) => {
     root: 'src',
     build: {
       sourcemap: true,
-
       rollupOptions: {
         input: glob.sync('./src/*.html'),
         output: {
@@ -24,8 +23,19 @@ export default defineConfig(({ command }) => {
         },
       },
       outDir: '../dist',
-      base: "/goit-js-hw-12/"
     },
-    plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
+    base: '/goit-js-hw-12/',
+    plugins: [
+      injectHTML(),
+      FullReload(['./src/**/**.html']),
+      viteStaticCopy({
+        targets: [
+          {
+            src: './src/languages/**/*',
+            dest: 'languages'
+          }
+        ]
+      })
+    ],
   };
 });
