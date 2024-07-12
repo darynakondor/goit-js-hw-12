@@ -72,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       const selectedLang = event.target.getAttribute('data-lang');
       saveLanguageCode(selectedLang);
-      window.location.href = `/${selectedLang}`;
     });
   });
 });
