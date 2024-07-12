@@ -9,6 +9,7 @@ export default defineConfig(({ command }) => {
       [command === 'serve' ? 'global' : '_global']: {},
     },
     root: 'src',
+    base: "/goit-js-hw-12/",
     build: {
       sourcemap: true,
 
@@ -23,8 +24,7 @@ export default defineConfig(({ command }) => {
           entryFileNames: 'commonHelpers.js',
         },
       },
-      outDir: '../dist',
-      base: "/goit-js-hw-12/"
+      outDir: '../dist'
     },
     plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
   };
