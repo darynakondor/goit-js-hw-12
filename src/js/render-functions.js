@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   languageLinks.forEach(link => {
     link.addEventListener('click', (event) => {
-      event.preventDefault();
       const selectedLang = event.target.getAttribute('data-lang');
       saveLanguageCode(selectedLang);
     });
