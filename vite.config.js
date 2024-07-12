@@ -24,6 +24,7 @@ export default defineConfig(({ command }) => {
         },
       },
       outDir: '../dist',
+      base: "/goit-js-hw-12/"
     },
     plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
   };
