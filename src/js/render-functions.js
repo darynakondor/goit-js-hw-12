@@ -63,9 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedLang = getLanguageCode();
   document.documentElement.lang = savedLang;
 
-  loadTranslations(savedLang).then(translations => {
-    translatePage(translations);
-  });
+  
+  const translation = loadTranslations(savedLang);
+  translatePage(translation);
 
   languageLinks.forEach(link => {
     link.addEventListener('click', (event) => {
