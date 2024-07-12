@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', (event) => {
       const selectedLang = event.target.getAttribute('data-lang');
       saveLanguageCode(selectedLang);
+      location.reload();
     });
   });
 });
