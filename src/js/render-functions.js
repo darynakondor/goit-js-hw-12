@@ -1,5 +1,6 @@
 const gallery = document.querySelector('.gallery')
-
+import en from '../languages/en.json';
+import ua from '../languages/ua.json';
 export function renderPhotosList(photos) {
     let html = ''
     photos.forEach(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) =>
@@ -10,8 +11,8 @@ export function renderPhotosList(photos) {
                 src="${webformatURL}"
                 alt="${tags}"
               />
-            </a>
-            <ul class="info">
+            </a>s
+            <ul class="info">s
                 <li class="item">
                     <p class="bold">Likes</p>
                     <p>${likes}</p>
@@ -43,9 +44,7 @@ function getLanguageCode() {
 }
   
 function loadTranslations(lang) {
-  return fetch(`/languages/${lang}.json`)
-    .then(response => response.json())
-    .catch(error => console.error('Error loading translations:', error));
+  return lang == "ua" ? ua : en
 }
   
 function translatePage(translations) {
